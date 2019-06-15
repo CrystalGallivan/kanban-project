@@ -8,7 +8,7 @@
         </div>
         <div class="col">
           <button class="btn btn-outline-secondary" style="color: whitesmoke" data-toggle="modal"
-            data-target="#boardModal" title="Create A Board" type="submit">Create Board
+            data-target="#boardModal" title="Create Board" type="submit">Create Board
             <i class="fas fa-plus"></i>
           </button>
           <button class="btn btn-secondary" @click="logout">Log Out</button>
@@ -40,7 +40,7 @@
         <div class="col" v-for="board in boards" :key="board._id">
           <div class="card board-list" style="width: 18rem;">
             <div class="card-body">
-              <router-link :to="{name: 'board', params: {boardId: board._id}}" style="color: #3f4430">
+              <router-link :to="{name: 'board', params: {boardId: board._id}}" style="color: whitesmoke">
                 <h5 class="card-title board-name">{{board.title}}</h5>
               </router-link>
               <p class="card-text" style="color: whitesmoke">{{board.description}}</p>
