@@ -28,59 +28,59 @@
 </template>
 
 <script>
-import router from "@/router.js";
-export default {
-  name: "login",
-  data() {
-    return {
-      loginForm: true,
-      creds: {
-        email: "",
-        password: ""
-      },
-      newUser: {
-        email: "",
-        password: "",
-        name: ""
-      }
-    };
-  },
-  methods: {
-    register() {
-      this.$store.dispatch("register", this.newUser);
+  import router from "@/router.js";
+  export default {
+    name: "login",
+    data() {
+      return {
+        loginForm: true,
+        creds: {
+          email: "",
+          password: ""
+        },
+        newUser: {
+          email: "",
+          password: "",
+          name: ""
+        }
+      };
     },
-    loginUser() {
-      this.$store.dispatch("login", this.creds);
+    methods: {
+      register() {
+        this.$store.dispatch("register", this.newUser);
+      },
+      loginUser() {
+        this.$store.dispatch("login", this.creds);
+      }
     }
-  }
-};
+  };
 </script>
 
 <style scoped>
-.action {
-  cursor: pointer;
-}
+  .action {
+    cursor: pointer;
+  }
 
-.card {
-  background-color: #3f443041;
-  margin-top: 200px;
-  color: white;
-  display: flex;
-  justify-content: center;
-}
+  .card {
+    background-color: #3f443093;
+    margin-top: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
 
-#title {
-  font-family: "Pacifico", cursive;
-  font-size: 4rem;
-  color: #3f4430;
-}
+  #title {
+    font-family: "Pacifico", cursive;
+    font-size: 4rem;
+    color: #3f4430;
+  }
 
-.login {
-  background-image: url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80);
-  min-height: 100vh;
-  background-attachment: fixed;
-  background-size: contain;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  .login {
+    background-image: url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80);
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 </style>

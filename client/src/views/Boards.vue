@@ -8,7 +8,7 @@
         </div>
         <div class="col">
           <button class="btn btn-outline-secondary" style="color: whitesmoke" data-toggle="modal"
-            data-target="#boardModal" title="Create A Board" type="submit">
+            data-target="#boardModal" title="Create A Board" type="submit">Create Board
             <i class="fas fa-plus"></i>
           </button>
           <button class="btn btn-secondary" @click="logout">Log Out</button>
@@ -35,16 +35,15 @@
       </div>
     </div>
     <!-- This is where Boards Render -->
-    <div class="container" id="board-container">
+    <div class="container" id="board">
       <div class="row">
         <div class="col" v-for="board in boards" :key="board._id">
-          <div class="card" style="width: 18rem;">
+          <div class="card board-list" style="width: 18rem;">
             <div class="card-body">
-              <router-link :to="{name: 'board', params: {boardId: board._id}}">
+              <router-link :to="{name: 'board', params: {boardId: board._id}}" style="color: #3f4430">
                 <h5 class="card-title board-name">{{board.title}}</h5>
               </router-link>
-              <p class="card-text">{{board.description}}</p>
-
+              <p class="card-text" style="color: whitesmoke">{{board.description}}</p>
               <button class="btn btn-outline-secondary" style="color: whitesmoke" @click.stop="deleteBoard(board._id)">
                 <i class="fas fa-trash-alt"></i>
               </button>
@@ -108,6 +107,11 @@
     background-color: rgba(10, 10, 10, 0.3);
     z-index: 1;
     background-position: center;
+  }
+
+  .board-list {
+    background-color: #3f443093;
+    margin-top: 5px;
   }
 
   #tagline {
