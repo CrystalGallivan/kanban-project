@@ -1,8 +1,6 @@
 <template>
   <div class="login container-fluid">
-    <header id="title">
-      Fidget
-    </header>
+    <header id="title">Fidget</header>
     <div class="row d-flex justify-content-center">
       <div class="col-4">
         <div class="card">
@@ -22,69 +20,67 @@
               <p v-if="loginForm">No account? Click here to Register</p>
               <p v-else>Already have an account? Click here to Login</p>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import router from '@/router.js'
-  export default {
-    name: "login",
-    data() {
-      return {
-        loginForm: true,
-        creds: {
-          email: "",
-          password: ""
-        },
-        newUser: {
-          email: "",
-          password: "",
-          name: ""
-        }
-      };
-    },
-    methods: {
-      register() {
-        this.$store.dispatch("register", this.newUser);
+import router from "@/router.js";
+export default {
+  name: "login",
+  data() {
+    return {
+      loginForm: true,
+      creds: {
+        email: "",
+        password: ""
       },
-      loginUser() {
-        this.$store.dispatch("login", this.creds);
+      newUser: {
+        email: "",
+        password: "",
+        name: ""
       }
+    };
+  },
+  methods: {
+    register() {
+      this.$store.dispatch("register", this.newUser);
+    },
+    loginUser() {
+      this.$store.dispatch("login", this.creds);
     }
-  };
+  }
+};
 </script>
 
-<style>
-  .action {
-    cursor: pointer;
-  }
+<style scoped>
+.action {
+  cursor: pointer;
+}
 
-  .card {
-    background-color: #3f443041;
-    margin-top: 200px;
-    color: white;
-    display: flex;
-    justify-content: center;
-  }
+.card {
+  background-color: #3f443041;
+  margin-top: 200px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
 
-  #title {
-    font-family: 'Pacifico', cursive;
-    font-size: 4rem;
-    color: #3f4430;
-  }
+#title {
+  font-family: "Pacifico", cursive;
+  font-size: 4rem;
+  color: #3f4430;
+}
 
-  .login {
-    background-image: url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80);
-    min-height: 100vh;
-    background-attachment: fixed;
-    background-size: contain;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+.login {
+  background-image: url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
