@@ -24,7 +24,7 @@
                   <div class="form-group mx-sm-3 mb-2">
                     <input type="text" class="form-control" placeholder="Title" v-model="newList.title">
                   </div>
-                  <button type="submit" class="btn btn-primary mb-2">Create List</button>
+                  <button type="submit" class="btn btn-outline-secondary mb-2">Create List</button>
                 </form>
               </div>
             </div>
@@ -135,9 +135,9 @@
     background-color: #3f4430a1;
     /* background-attachment: fixed;
     background-image: url(https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-    min-height: 100vh;
     background-size: contain;
-    background-size: cover;
     background-repeat: no-repeat; */
+    background-size: cover;
+    min-height: 100vh;
   }
 </style>

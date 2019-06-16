@@ -3,7 +3,7 @@
     <div class="card list-card">
       <div class="card-header list-title">
         <div class="list-title-text">{{listData.title}}</div>
-        <button @click="deleteList" class="btn btn-danger" title="Delete List">
+        <button class="btn btn-outline-secondary" style="color: whitesmoke" @click.stop="deleteList">
           <i class="fas fa-trash-alt"></i>
         </button>
       </div>
@@ -15,10 +15,10 @@
       <!-- Task From -->
       <form class="add-task-form" @submit.prevent="submitTask">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Title" v-model="newTask.title">
+          <input type="text" class="form-control" placeholder="Task Title" v-model="newTask.title">
           <input type="text" class="form-control" placeholder="Description" v-model="newTask.description">
           <div class="input-button">
-            <button type="submit" class="btn btn-secondary mb-2">
+            <button type="submit" class="btn btn-outline-secondary mb-2">
               <i class="fas fa-plus"></i>
             </button>
           </div>
