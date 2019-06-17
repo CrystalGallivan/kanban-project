@@ -65,8 +65,6 @@
         }
       }, 3000);
     },
-    //FYI: above was referenced from food-is-fun like Mark told us to EOD Friday for correct timeout, below is groups and he is probably right, Mark is by far the coolest of the cool, he may even have refactored the original code to fit the needs of this particular project.
-
     mounted() {
       this.$store.dispatch("getBoards");
     },
@@ -88,7 +86,6 @@
       addBoard() {
         this.$store.dispatch("addBoard", this.newBoard);
         this.newBoard = { title: "", description: "" };
-        //manually closes modal
         $("#boardModal").modal("hide");
         $(".modal-backdrop").remove();
       },

@@ -12,10 +12,10 @@ let _taskRepo = _taskService.repository
 export default class ListController {
   constructor() {
     this.router = express.Router()
+      .use(Authorize.authenticated)
       .get('', this.getAllLists)
       .get('/:id', this.getListById)
       .get('/:id/tasks', this.getTasks)
-      .use(Authorize.authenticated)
       .post('', this.createList)
       .put('/:id', this.editList)
       .delete('/:id', this.deleteList)
@@ -31,7 +31,7 @@ export default class ListController {
 
   async getListById(req, res, next) {
     try {
-      let list = await _repo.findById(req.params.id)
+      let list = await _repo.find({ _id: req.params.id, authorId: req.session.uid })
       return res.send(list)
     } catch (error) { next(error) }
   }

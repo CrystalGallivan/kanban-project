@@ -9,9 +9,6 @@
       </div>
       <!-- Render Here -->
       <task v-for="task in tasks" :taskData="task" :listData="listData" :key="task._id" />
-
-      <!-- Maybe something will go here -->
-
       <!-- Task From -->
       <form class="add-task-form" @submit.prevent="submitTask">
         <div class="input-group">

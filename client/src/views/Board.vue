@@ -36,39 +36,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="board-view container-fluid">
-    <div class="row" id="board-view-nav">
-      <header class="board-details-name">
-        <router-link :to="{name: 'boards'}" style=" color: #3f4430;">Fidget</router-link>
-      </header>
-      <div class="col">{{board.title}}
-      </div>
-
-      <div class="col">
-        <p>
-          <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample"
-            aria-expanded="false" aria-controls="collapseExample">
-            Create List <i class="fas fa-plus"></i>
-          </button>
-          <button class="btn btn-secondary" @click="logout">Log Out</button>
-        </p>
-        <div class="collapse" id="collapseExample"> -->
-  <!-- <div class="card">
-            <form class="form-inline" @submit.prevent="submitList">
-              <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" placeholder="Title" v-model="newList.title">
-              </div>
-              <button type="submit" class="btn btn-primary mb-2">Create List</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <list v-for="list in lists" :listData="list" :key="list._id" />
-    </div>
-  </div> -->
 </template>
 
 <script>
@@ -107,7 +74,6 @@
         let list = { ...this.newList, boardId: this.boardId };
         this.$store.dispatch("addList", list);
         form.reset();
-        //collapses form after submission
         $(".collapse").collapse("hide");
       },
       logout() {
@@ -133,10 +99,6 @@
 
   .board-view {
     background-color: #3f4430a1;
-    /* background-attachment: fixed;
-    background-image: url(https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-    background-size: contain;
-    background-repeat: no-repeat; */
     background-size: cover;
     min-height: 100vh;
   }

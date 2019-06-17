@@ -14,8 +14,8 @@ let _listRepo = _listService.repository
 export default class BoardsController {
   constructor() {
     this.router = express.Router()
+      .use(Authorize.authenticated) //this insures user exists and is logged in for req.session
       .get('', this.getAll)
-      .use(Authorize.authenticated)
       .get('/:id/lists', this.getLists)
       .post('', this.create)
       .put('/:id', this.edit)
